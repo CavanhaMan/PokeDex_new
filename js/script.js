@@ -25,7 +25,7 @@ const fetchPokemon = async (pokemon) => {
         + ", " + data['moves']['1']['move']['name']);
 
         return data;
-}
+    }
 }
 
 //fetchPokemon('25');
@@ -120,3 +120,22 @@ function solta(e) {
     btn.classList.toggle("clicado");
   }
 }
+
+// ACOES DO BOTÃO LIGA/DESLIGA
+var estado = 0;
+$('#btpower').click(function(){
+  console.log("CLICADO");
+  if (estado == 0){
+    $(this).attr("src", './img/bt_ligado.png');
+    estado = 1;
+  }
+  else if(estado == 1){
+    $(this).attr("src", './img/bt_desligar.png');
+    estado = 2;
+  }
+  else if(estado == 2){
+    $(this).attr("src", './img/bt_desligado.png');
+    estado = 0;
+  }
+
+});
