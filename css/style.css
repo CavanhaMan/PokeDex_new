@@ -10,27 +10,27 @@ body{
 }
 main {
   display: inline-block;
-  margin-top: 2%;
+  margin-top: 1%;
   padding: 15px;
   position: relative;
   }
   .pokedex{
   width: 100%;
-  max-width: 425px;
+  max-width: 920px;
 }
 .pokemon__image {
   position: absolute;
-  bottom: 55%;
-  left: 50%;
+  bottom: 50%;
+  left: 28%;
   transform: translate(-63%, 20%);
   height: 18%;
   }
-.pokemon__data2 {
+.pokemon__data2 { /* NOME DO POKEMON */
   position: absolute;
   font-weight: 600;
   color: #515253;
-  top: 54.5%;
-  right: 27%;
+  top: 32.5%;
+  left: 61%;
   font-size: clamp(8px, 5vw, 25px);
 }
 .pokemon__name {
@@ -39,9 +39,9 @@ main {
   }
 .form {
   position: absolute;
-  width: 68%;
-  top: 65%;
-  left: 11.5%;
+  width: 39%;
+  top: 72%;
+  left: 6%;
   }
 .input__search {
   width: 100%;
@@ -56,7 +56,7 @@ main {
 }
 .buttons {
   position: absolute;
-  bottom: 10%;
+  bottom: 8%;
   left: 50%;
   width: 65%;
   transform: translate(-57%, 0);
@@ -64,7 +64,7 @@ main {
   gap: 20px;
 }
 .button {
-  width: 50%;
+  width: 20%;
   border: 2px solid #000;
   border-radius: 5px;
   font-weight: 600;
@@ -86,26 +86,23 @@ main {
 }
 
 /* numero do pokemon - foi colocado separado para liberar espaço */
-.pokemon__data1 {
+.pokemon__data1 { /* NUMERO DO POKEMON */
   position: absolute;
   font-weight: 600;
   color: #515253;
-  top: 12%;
-  right: 20%;
-  font-size: clamp(8px, 12vw, 35px);
+  top: 61%;
+  right: 78%;
+  font-size: clamp(8px, 12vw, 30px);
   width: 15%;
-  border: 2px solid #333;
   border-radius: 10px;
-  box-shadow: -3px 4px 0 #888, -5px 7px 0 #333;
-  background-color: beige;
   text-align: right;
 }
 /* BOTAO POWER */
 .btpower{
-  height: 13%;
+  height: 15%;
   position: absolute;
   top: 3.4%;
-  right: 71.3%;
+  right: 84%;
 }
 /* botoes de controle pokemon */
 .controles{
