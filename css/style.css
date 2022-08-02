@@ -20,7 +20,7 @@ main {
 }
 .pokemon__image {
   position: absolute;
-  bottom: 50%;
+  bottom: 47.5%;
   left: 28%;
   transform: translate(-63%, 20%);
   height: 18%;
@@ -90,7 +90,7 @@ main {
   position: absolute;
   font-weight: 600;
   color: #515253;
-  top: 61%;
+  top: 61.5%;
   right: 78%;
   font-size: clamp(8px, 12vw, 30px);
   width: 15%;
@@ -108,4 +108,11 @@ main {
 .controles{
   width: 50%;
   height: 50%;
+}
+.tela{
+  position: absolute;
+  width: 33.8%;
+  top: 28.7%;
+  left: 8.6%;
+  border-radius: 10px;
 }
