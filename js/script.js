@@ -10,22 +10,33 @@ const buttonNext = document.querySelector('.btn-next');
 
 //fazendo acesso assincrono a API (usando await para aguardar a resposta)
 const fetchPokemon = async (pokemon) => {
-    const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-    console.log(APIResponse);
+  //https://pokeapi.glitch.me/v1/pokemon/1
+    const APIResponse = await fetch(`https://pokeapi.glitch.me/v1/pokemon/${pokemon}`);
+  //const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
+  console.log("____APIResponse:___________________");
+  console.log(APIResponse);
 
     //acessando os dados json da consulta API:
-    if (APIResponse.status === 200) {
-        const data = await APIResponse.json();
+  if (APIResponse.status === 200) {
+    const data = await APIResponse.json();
     
-        console.log(data);
-        console.log("Nome do pokemon: "+data.name);
-        console.log("Numero do pokemon: "+data.id);
-        console.log("Tipo do pokemon: "+ data['types']['0']['type']['name']);
-        console.log("Ataques: "+ data['moves']['0']['move']['name']
-        + ", " + data['moves']['1']['move']['name']);
+    console.log("____DATA:__________________________");
+    console.log(data);
+    console.log("Número do pokemon: "+data['0']['number']);
+    console.log("Nome do pokemon: "+data['0']['name']);
+    console.log("Numero do pokemon: "+data['0']['number']);
+    console.log("Tipo do pokemon: "+ data['0']['types']);
+    console.log("Tipo do pokemon: "+ data['0']['species']);
+    console.log("Habilidade normal: "+ data['0']['abilities']['normal']);
+    console.log("Habilidade oculta: "+ data['0']['abilities']['hidden']);
+    console.log("Gênero: "+ data['0']['gender']);
+    console.log("Altura: "+ data['0']['height']);
+    console.log("Peso: "+ data['0']['weight']);
+    console.log("Evolução: "+ data['0']['family']['evolutionLine']);
+    console.log("STARTER: "+ data['0']['starter']);
 
-        return data;
-    }
+    return data;
+  }
 }
 
 //fetchPokemon('25');
@@ -39,17 +50,13 @@ const renderPokemon = async (pokemon) => {
   
     if (data) {
       pokemonImage.style.display = 'block';
-      pokemonName.innerHTML = data.name;
-      pokemonNumber.innerHTML = data.id;
-      if (data.id < 650) {//acima de 649 não tem imagens!
-        pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
-      }
-      else
-        pokemonImage.src = './img/erro.png'; 
+      pokemonName.innerHTML = data['0']['name'];
+      pokemonNumber.innerHTML = data['0']['number'];
+      pokemonImage.src = "https://cdn.traction.one/pokedex/pokemon/"+ data['0']['number'] + ".png";
 
       input.value = '';
-      searchPokemon = data.id;
-    } else {
+      searchPokemon = data['0']['number'];
+     } else {
       //pokemonImage.style.display = 'none';
       pokemonImage.src = './img/erro.png';
       pokemonName.innerHTML = 'Não encontrado!';
