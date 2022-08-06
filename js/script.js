@@ -49,19 +49,19 @@ const renderPokemon = async (pokemon) => {
       pokemonName.innerHTML = data['0']['name'];
       pokemonNumber.innerHTML = data['0']['number'];
       var pokefoto = "https://cdn.traction.one/pokedex/pokemon/"+ data['0']['number'] + ".png";
-
-      var http = jQuery.ajax(
-        {
+      //CAPTURA INFORMACOES DA FOTO USANDO AJAX:
+      var http = jQuery.ajax({
            type:"HEAD",
            url: pokefoto,
            async: false
          })
-
+      //CHECA O STATUS DA IMAGEM ATRAVES DAS INFORMACOES OBTIDAS ACIMA:
       var statuscode = http.status;
-      if (statuscode==200)
+      if (statuscode==200) //SE OK, MOSTRA O POKEMON
         pokemonImage.src = pokefoto;
-      else
-        pokemonImage.src = "img/erro.png"
+      else  //SE NAO OK (404) MOSTRA IMAGEM DE ERRO
+        pokemonImage.src = "img/erro.png";
+      //EXEMPLO DE IMAGEM FALTANDO: POKEMON 778  
       input.value = '';
       searchPokemon = data['0']['number'];
      } else {
