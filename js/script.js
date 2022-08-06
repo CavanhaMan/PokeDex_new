@@ -11,7 +11,7 @@ const buttonNext = document.querySelector('.btn-next');
 //fazendo acesso assincrono a API (usando await para aguardar a resposta)
 const fetchPokemon = async (pokemon) => {
   //https://pokeapi.glitch.me/v1/pokemon/1
-    const APIResponse = await fetch(`https://pokeapi.glitch.me/v1/pokemon/${pokemon}`);
+  const APIResponse = await fetch(`https://pokeapi.glitch.me/v1/pokemon/${pokemon}`);
   //const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
   console.log("____APIResponse:___________________");
   console.log(APIResponse);
@@ -53,7 +53,7 @@ const renderPokemon = async (pokemon) => {
       pokemonName.innerHTML = data['0']['name'];
       pokemonNumber.innerHTML = data['0']['number'];
       pokemonImage.src = "https://cdn.traction.one/pokedex/pokemon/"+ data['0']['number'] + ".png";
-
+      $('#carregando').fadeOut(1500);
       input.value = '';
       searchPokemon = data['0']['number'];
      } else {
@@ -70,18 +70,18 @@ const renderPokemon = async (pokemon) => {
   });
   
   buttonPrev.addEventListener('click', () => {
-    searchPokemon -= 1;
+    searchPokemon--;
     console.log(searchPokemon);
     if (searchPokemon < 1){
-      searchPokemon = 898;
+      searchPokemon = 807;
     }
     renderPokemon(searchPokemon);
   });
   
   buttonNext.addEventListener('click', () => {
-    searchPokemon += 1;
+    searchPokemon++;
     console.log(searchPokemon);
-    if (searchPokemon > 898) {//acima de 898 não tem nada
+    if (searchPokemon > 807) {//NUMERO MAXIMO DE POKEMONS ATUALMENTE
       searchPokemon = 1; 
     }
     renderPokemon(searchPokemon);

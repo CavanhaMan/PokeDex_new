@@ -18,10 +18,10 @@ main {
   width: 100%;
   max-width: 920px;
 }
-.pokemon__image {
+#carregando, .pokemon__image {
   position: absolute;
-  bottom: 47.5%;
-  left: 28%;
+  bottom: 45.5%;
+  left: 27%;
   transform: translate(-63%, 20%);
   height: 18%;
   }
