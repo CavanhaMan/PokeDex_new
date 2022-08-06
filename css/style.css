@@ -116,3 +116,17 @@ main {
   left: 8.6%;
   border-radius: 10px;
 }
+/*TABELA DE DETALHES*/
+table,tr,td,th{
+  text-align: left;
+}
+td,th{
+  padding: 0px 10px 0px 10px;
+}
+.dados{
+  position: absolute;
+  top: 45%;
+  left: 60%;
+  width-max: 26.2%;
+  font-size: clamp(8px, 12vw, 18px);
+}

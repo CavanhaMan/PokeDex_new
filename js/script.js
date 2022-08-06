@@ -14,27 +14,23 @@ const fetchPokemon = async (pokemon) => {
   const APIResponse = await fetch(`https://pokeapi.glitch.me/v1/pokemon/${pokemon}`);
   //const APIResponse = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
   console.log("____APIResponse:___________________");
-  console.log(APIResponse);
+  //console.log(APIResponse);
 
     //acessando os dados json da consulta API:
   if (APIResponse.status === 200) {
     const data = await APIResponse.json();
     
     console.log("____DATA:__________________________");
-    console.log(data);
-    console.log("Número do pokemon: "+data['0']['number']);
-    console.log("Nome do pokemon: "+data['0']['name']);
-    console.log("Numero do pokemon: "+data['0']['number']);
-    console.log("Tipo do pokemon: "+ data['0']['types']);
-    console.log("Tipo do pokemon: "+ data['0']['species']);
-    console.log("Habilidade normal: "+ data['0']['abilities']['normal']);
-    console.log("Habilidade oculta: "+ data['0']['abilities']['hidden']);
-    console.log("Gênero: "+ data['0']['gender']);
-    console.log("Altura: "+ data['0']['height']);
-    console.log("Peso: "+ data['0']['weight']);
-    console.log("Evolução: "+ data['0']['family']['evolutionLine']);
-    console.log("STARTER: "+ data['0']['starter']);
+    //console.log(data);
 
+    $('#poke_types').html(data['0']['types'].toString());
+    $('#poke_species').html(data['0']['species']);
+    $('#poke_a_normal').html(data['0']['abilities']['normal']);
+    $('#poke_a_hidden').html(data['0']['abilities']['hidden']);
+    $('#poke_gender').html(data['0']['gender'].toString());
+    $('#poke_height').html(data['0']['height']);
+    $('#poke_weight').html(data['0']['weight']);
+    $('#poke_family').html(data['0']['family']['evolutionLine'].toString());
     return data;
   }
 }

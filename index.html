@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Rodrigo CavanhaMan" />
-    <title>PokeDex</title>
-    <!-- BOOTSTRAP -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <!-- FAVICON -->
-    <link rel="icon" type="image/png" sizes="16x16"  href="favicons/favicon-16x16.png"> 
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="theme-color" content="#ffffff">
-    <!-- CSS / JS -->
-    <link rel="stylesheet" href="css/style.css">
-    <script defer src="js/script.js"></script>
-    <script src="js/jquery-3.6.0.min.js"></script>
-    <!-- API SOURCE: https://pokedevs.gitbook.io/pokedex/ -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Rodrigo CavanhaMan" />
+  <title>PokeDex</title>
+  <!-- BOOTSTRAP -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+  <!-- FAVICON -->
+  <link rel="icon" type="image/png" sizes="16x16"  href="favicons/favicon-16x16.png"> 
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="theme-color" content="#ffffff">
+  <!-- CSS / JS -->
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/script.js"></script>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <!-- API SOURCE: https://pokedevs.gitbook.io/pokedex/ -->
 </head>
 <body>
     <main>
@@ -31,15 +31,13 @@
         </h1>
         <form class="form">
             <input
-              type="search"
-              class="input__search"
-              placeholder="Nome ou Número do Pokemon"
-              required
-            />
-        </form>
-      
+                type="search"
+                class="input__search"
+                placeholder="Nome ou Número do Pokemon"
+                required/>
+       </form>
+    
         <div class="buttons">
-            
             <button id="btnprev" class="button btn-prev">
                 <svg xmlns="http://www.w3.org/2000/svg" class="controles" fill="currentColor" class="bi bi-caret-left-fill" viewBox="0 0 16 16"><path d="m3.86 8.753 5.482 4.796c.646.566 1.658.106 1.658-.753V3.204a1 1 0 0 0-1.659-.753l-5.48 4.796a1 1 0 0 0 0 1.506z"/></svg>
             </button>
@@ -47,9 +45,52 @@
                 <svg xmlns="http://www.w3.org/2000/svg" class="controles" fill="currentColor" class="bi bi-caret-right-fill" viewBox="0 0 16 16"><path d="m12.14 8.753-5.482 4.796c-.646.566-1.658.106-1.658-.753V3.204a1 1 0 0 1 1.659-.753l5.48 4.796a1 1 0 0 1 0 1.506z"/></svg>
             </button>
         </div>
-      
+
         <img src="img/pokedex_new.png" alt="PokeDex" class="pokedex">
-        </main>
+    </main>
+
+    <div class="dados">
+        <table>
+            <tr>
+              <th>Tipo:</th>
+               <td id="poke_types"></td>
+            </tr>
+            <tr>
+              <th>Espécie:</th>
+               <td id="poke_species"></td>
+            </tr>
+            <tr>
+              <th colspan="2">Habilidade:</th>
+            </tr>
+            <tr>
+              <td>Normal:</td>
+               <td id="poke_a_normal"></td>
+            </tr>
+              <tr>
+              <td>Oculta:</td>
+               <td id="poke_a_hidden"></td>
+            </tr>
+            <tr>
+              <th>Gênero:</th>
+               <td id="poke_gender"></td>
+            </tr>
+            <tr>
+              <th>Altura:</th>
+               <td id="poke_height"></td>
+            </tr>
+            <tr>
+              <th>Peso:</th>
+               <td id="poke_weight"></td>
+            </tr>
+            <tr>
+                <th colspan="2">Evoluções:</th>
+            </tr>
+            <tr>
+               <td id="poke_family" colspan="2"></td>
+            </tr>
+          </table>
+      </div>
+
 </body>
 </html>
 
