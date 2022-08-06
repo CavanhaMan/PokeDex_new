@@ -53,7 +53,6 @@ const renderPokemon = async (pokemon) => {
       pokemonName.innerHTML = data['0']['name'];
       pokemonNumber.innerHTML = data['0']['number'];
       pokemonImage.src = "https://cdn.traction.one/pokedex/pokemon/"+ data['0']['number'] + ".png";
-      $('#carregando').fadeOut(1500);
       input.value = '';
       searchPokemon = data['0']['number'];
      } else {

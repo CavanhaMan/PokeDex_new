@@ -18,12 +18,12 @@ main {
   width: 100%;
   max-width: 920px;
 }
-#carregando, .pokemon__image {
+.pokemon__image {
   position: absolute;
   bottom: 45.5%;
   left: 27%;
   transform: translate(-63%, 20%);
-  height: 18%;
+  height: 20%;
   }
 .pokemon__data2 { /* NOME DO POKEMON */
   position: absolute;
