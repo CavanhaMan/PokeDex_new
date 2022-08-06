@@ -48,7 +48,20 @@ const renderPokemon = async (pokemon) => {
       pokemonImage.style.display = 'block';
       pokemonName.innerHTML = data['0']['name'];
       pokemonNumber.innerHTML = data['0']['number'];
-      pokemonImage.src = "https://cdn.traction.one/pokedex/pokemon/"+ data['0']['number'] + ".png";
+      var pokefoto = "https://cdn.traction.one/pokedex/pokemon/"+ data['0']['number'] + ".png";
+
+      var http = jQuery.ajax(
+        {
+           type:"HEAD",
+           url: pokefoto,
+           async: false
+         })
+
+      var statuscode = http.status;
+      if (statuscode==200)
+        pokemonImage.src = pokefoto;
+      else
+        pokemonImage.src = "img/erro.png"
       input.value = '';
       searchPokemon = data['0']['number'];
      } else {
@@ -84,7 +97,6 @@ const renderPokemon = async (pokemon) => {
 
   renderPokemon('1'); //inicia o pokedex com o primeiro pokemon
   //renderPokemon('charizard');
-
 
 /*
 ACRESCENTANDO LEITURA DAS SETAS DO TECLADO:
